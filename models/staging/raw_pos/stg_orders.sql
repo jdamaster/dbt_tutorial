@@ -8,7 +8,7 @@ with stg_orders as (
     O_ORDERPRIORITY order_priority,
     O_CLERK clerk,
     O_SHIPPRIORITY ship_priority
-    from  RAW_POS.orders
+    from  {{ source('raw_pos', 'orders') }}
 
 )
 select * from stg_orders

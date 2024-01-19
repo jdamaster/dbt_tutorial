@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw_pos
+    database: TASTY_BYTES_SAMPLE_DATA
+    schema: raw_pos
+    tables:
+      - name: lineitem
+      - name: orders
