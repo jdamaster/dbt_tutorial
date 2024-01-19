@@ -12,5 +12,6 @@ models:
           - not_null
   - name: stg_items
     description: "Items table with proper naming convention"
+    
   - name: stg_orders
     description: "Orders table with proper naming convention"
