@@ -1,0 +1,17 @@
+
+version: 2
+
+models:
+  - name: stg_order_items
+    description: "Items with augmented order information"
+    columns:
+      - name: uuid
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+  - name: stg_items
+    description: "Items table with proper naming convention"
+    
+  - name: stg_orders
+    description: "Orders table with proper naming convention"

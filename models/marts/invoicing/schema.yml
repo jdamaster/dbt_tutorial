@@ -1,0 +1,8 @@
+
+version: 2
+
+models:
+  - name: fact_orders
+    description: "Orders performed across time"
+
+
