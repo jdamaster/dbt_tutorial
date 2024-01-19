@@ -1,5 +1,3 @@
-{{ config(materialized='table') }}
-
 with stg_items as (
     select 
     L_ORDERKEY order_key,

@@ -1,5 +1,3 @@
-{{ config(materialized='table') }}
-
 with stg_orders as (
 
     select 
