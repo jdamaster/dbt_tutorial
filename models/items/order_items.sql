@@ -7,7 +7,7 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='view') }}
+{{ config(materialized='table') }}
 
 with stg_orders as (
 
@@ -19,13 +19,14 @@ with stg_orders as (
     O_ORDERPRIORITY order_priority,
     O_CLERK clerk,
     O_SHIPPRIORITY ship_priority
-    from  tpch_sf1.orders
+    from  RAW_POS.orders
 
 ),
 
 stg_items as (
     select 
     L_ORDERKEY order_key,
+    UUID uuid,
     L_LINENUMBER line_number,
     L_QUANTITY quantity,
     L_EXTENDEDPRICE base_price,
@@ -35,7 +36,7 @@ stg_items as (
     L_TAX tax,
     L_RETURNFLAG return_flag,
     L_LINESTATUS line_status
-    from  tpch_sf1.lineitem
+    from  RAW_POS.lineitem
 ),
 order_items as (
     select stg_items.*, stg_orders.order_date, stg_orders.order_status, stg_orders.order_priority, stg_orders.ship_priority
